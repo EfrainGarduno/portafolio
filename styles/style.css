@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* Aqui declaramos las variables */
+:root{
+    --color-primario:#000000;
+    --color-secundario:#F6F6F6;
+    --color-terciario:#22D4FD;
+    --color-hover:#272727;
+
+    --fuente-montserrat:'Montserrat', sans-serif;
+    --fuente-krona:'Krona One', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin:0;
+}
+
+body{
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.header{
+    padding: 2% 0% 0% 15%;
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    /*font-size: 24px;*/
+    font-size: 1.5rem;  /* 1rem=16 pixeles */
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.header__menu__link:hover{
+    background-color: var(--color-hover);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario); 
+}
+
+.presentacion {
+    padding: 1% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.presentacion__enlaces{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.presentacion__enlaces__link{
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      border: 2px solid var(--color-terciario);
+      width: 50%;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 21.5px 0;
+      text-decoration: none;
+      color: var(--color-secundario);
+      font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    color:var(--color-primario);
+    background-color: var(--color-terciario);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Aqui le estamos diciendo que cuando la pantalla este por debajo 
+   de los 1250 pixeles, la direccion de los elementos sea vertical 
+   o en columna, y eso se lo ponemos s la clase .presentacion{} 
+
+   y otros atributos que defininimos ciuando se de ese ancho
+
+   También podemos definir rangos para los tamaños de pantalla 
+   con una única media query, asignamos el valor mínimo y luego 
+   el valor máximo separándolos con el atributo "and", 
+   así: @media (min-width: 480px ) and (max-width: 800px), 
+   en este caso, los estilos se aplicarán en pantallas de 
+   al menos "480px" y como máximo "800px". */
+
+
+@media (max-width: 1250px) {
+    .header{
+        padding: 10%;
+    }
+    .header__menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        /*flex-direction: column; esto pone la imagen abajo*/
+        flex-direction: column-reverse; /* Esto pone la imagen arriba*/
+        padding: 5%;
+    }
+    .presentacion__contenido{
+        width: auto;
+    }
+  }
